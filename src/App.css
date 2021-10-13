@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+:root {
+	--primary-background: rgb(119, 64, 255);
+	--secondary-background: rgb(69, 161, 143);
+	--App-background: #3f3160;
+	--primary-gray: #cccccc;
+	--primary-red: rgb(151, 26, 26);
+}
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'EB Garamond', serif;
+}
+*:focus {
+	outline: none;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: var(--primary-background);
+	background: -moz-radial-gradient(
+		circle,
+		rgba(119, 64, 255, 0.9) 45%,
+		rgba(69, 161, 143, 0.9) 100%
+	);
+	background: -webkit-radial-gradient(
+		circle,
+		rgba(119, 64, 255, 0.9) 45%,
+		rgba(69, 161, 143, 0.9) 100%
+	);
+	background: radial-gradient(
+		circle,
+		rgba(119, 64, 255, 0.9) 45%,
+		rgba(69, 161, 143, 0.9) 100%
+	);
+}
+.App {
+	background-color: var(--App-background);
+	height: 90vh;
+	width: 40vw;
+	padding: 3rem;
+	margin: auto;
+	border-radius: 5px;
+	box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4);
+}
+h1 {
+	text-align: center;
+	color: var(--primary-gray);
+	font-size: 5rem;
+	margin: auto;
+}
+.form {
+	margin: 1rem 0;
+}
+.form-input {
+	width: 100%;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	font-size: 1.8rem;
+	color: var(--primary-gray);
+	background-color: rgba(27, 112, 137, 1);
+	border: 1px solid #444;
+	outline: none;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.form-input::placeholder {
+	color: var(--secondary-background);
+}
+.form-input:focus {
+	border: 1px solid var(--secondary-background);
+}
+.form-buttons {
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.add-todo-btn,
+.clear-list-btn {
+	color: var(--primary-gray);
+	font-size: 1.8rem;
+	cursor: pointer;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	border: none;
+	border-radius: 5px;
+	padding: 1rem;
+}
+.add-todo-btn {
+	background-color: var(--primary-background);
+}
+.clear-list-btn {
+	background-color: var(--primary-red);
+}
+.add-todo-btn:active,
+.clear-list-btn:active {
+	transform: translateY(3px);
+}
+.todo-list {
+	width: 100%;
+	list-style: none;
+	font-size: 1.8rem;
+	max-height: 50vh;
+	overflow: hidden;
+	overflow-y: auto;
+}
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 8px;
+	background-color: #444444;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #cccccc;
+	border-radius: 8px;
+}
+.list-item {
+	display: grid;
+	grid-template-columns: 0.2fr 3fr 0.2fr 0.2fr;
+	margin: 20px 0;
+	padding-bottom: 5px;
+}
+.title {
+	font-size: 2.4rem;
+	color: var(--primary-gray);
+}
+.icon {
+	vertical-align: sub;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	font-size: 1.8rem;
+}
+.completed-icon {
+	margin-right: 1rem;
+	color: var(--primary-background);
+}
+.edit-icon {
+	margin-right: 1rem;
+	color: var(--secondary-background);
+}
+.remove-icon {
+	color: var(--primary-red);
+}
+.task-completed {
+	opacity: 0.5;
+	text-decoration: line-through;
+}
+.no-todos {
+	color: var(--primary-gray);
+	text-align: center;
+	font-size: 2.4rem;
+	margin-top: 2rem;
+}
+.Toastify {
+	font-size: 2.2rem;
+	text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+	.App {
+		width: 60vw;
+	}
+}
+@media only screen and (max-width: 700px) {
+	.App {
+		width: 80vw;
+	}
+}
+@media only screen and (max-width: 500px) {
+	html {
+		font-size: 50%;
+	}
+	.App {
+		height: 100vh;
+		width: 100vw;
+	}
+	.todo-list {
+		max-height: 65vh;
+	}
+}
